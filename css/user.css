@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+main {
+    display: flex;
+    background-color: #e3e3e3;
+    border-radius: 25px 25px 25px 25px;
+    margin: 20px;
+}
+
+.content {
+    display: flex;
+}
+
+.content_item {
+    margin: 15px;
+}
+
+.avatar {
+    width: 200px;
+    border-radius: 25px 25px 25px 25px;
+}
+
+.change_avatar a {
+    color: #2e81ce;
+    font-size: 22px;
+    
+}
+
+.change_avatar a:hover {
+    color: #2468a8;
+}
+
+.logout a {
+    color: #e65d5d;
+    font-size: 20px;
+}
+
+.logout a:hover {
+    color: #f81d1d;
+}
+
+.admin_panel a {
+    color: #96d87c;
+    font-size: 20px;
+}
+
+.admin_panel a:hover {
+    color: #6ef85b;
+}
