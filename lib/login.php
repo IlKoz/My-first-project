@@ -17,7 +17,7 @@
             "role" => $user['role'],
             "avatar" => $user['avatar']
         ];
-        header("Location:../user.php");
+        header("Location:../user.php?id=$user['id']");
     } else {
         $_SESSION['message'] = "Неправельная почта или пароль :(";
         header("Location:../auth.php");
