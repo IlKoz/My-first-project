@@ -30,7 +30,7 @@
                     ?>
 
                     <div class="header_item login">
-                        <a href="user.php">
+                        <a href="user.php?id=<?=$_SESSION['user']['id']?>">
                             <img class="avatar_header" src=" <?=$_SESSION['user']['avatar']?> " alt="gg">
                         </a>
                     </div>
