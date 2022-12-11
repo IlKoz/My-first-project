@@ -22,6 +22,10 @@
                 <span class="icon"><ion-icon name="people-outline"></ion-icon></span><br>
                 <span class="text">Люди</span>
             </a>
+            <a href="friend.php">
+                <span class="icon"><ion-icon name="people-circle-outline"></ion-icon></span><br>
+                <span class="text">Друзья</span>
+            </a>
         </aside>
         <section>
             <div class="table">

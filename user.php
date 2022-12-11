@@ -22,6 +22,10 @@
                 <span class="icon"><ion-icon name="people-outline"></ion-icon></span><br>
                 <span class="text">Люди</span>
             </a>
+            <a href="friend.php">
+                <span class="icon"><ion-icon name="people-circle-outline"></ion-icon></span><br>
+                <span class="text">Друзья</span>
+            </a>
         </aside>
         <section>
             <?php
@@ -70,9 +74,29 @@
                             <div class="content_item">
                                 <img class="avatar" src="<?=$one["avatar"]?>" alt="avatar">
                                 <?php
-                                
+                                    $user_id = $_SESSION['user']['id'];
+                                    $quarryFriend="SELECT * FROM `friend` where `friend`.`user_id`='$user_id'";
+                                    $friend=mysqli_query($db,$quarryFriend);
+                                    $friend=mysqli_fetch_all($friend);
+                                    if(!$friend)
+                                    {
+                                        ?>
+                                            <h1 class="add_friends"><a href="lib/add_friend.php?id=<?=$id?>">Добавить в друзья</a></h1>
+                                        <?php
+                                    } else {
+                                        foreach ($friend as $item) {
+                                            if ($item[2] == $id) {
+                                                ?>
+                                                    <h1 class="add_friends">ожидание ответа</h1>
+                                                <?php
+                                            } else {
+                                                ?>
+                                                    <h1 class="add_friends"><a href="lib/add_friend.php?id=<?=$id?>">Добавить в друзья</a></h1>
+                                                <?php
+                                            }
+                                        }
+                                    }
                                 ?>
-                                <h1 class="add_friends"><a href="lib/add_friend.php?id=<?=$id?>">Добавить в друзья</a></h1>
                                 <h1 class="name"> <?=$one["email"]?> </h1>
                             </div>
                         </div>
