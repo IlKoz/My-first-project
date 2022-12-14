@@ -40,22 +40,20 @@
                                     require "lib/db.php";
                                     $user_id = $_SESSION['user']['id'];
 
-                                    $quaryAll = "SELECT * FROM `friend` WHERE `friend`.`user_id`='$user_id'";
+                                    $quaryAll = "SELECT * FROM `friend` WHERE `friend`.`user_id`='$user_id' AND `status`='1'";
                                     $all = mysqli_query($db,$quaryAll);
                                     $all = mysqli_fetch_all($all);
                                     foreach ($all as $item){
-                                        $quaryAll2 = "SELECT * FROM `friend` WHERE `friend`.`user_id`='$item[2]'";
+                                        $quaryAll2 = "SELECT * FROM `user` WHERE `user`.`id`='$item[2]'";
                                         $all2 = mysqli_query($db,$quaryAll2);
                                         $all2 = mysqli_fetch_all($all2);
                                         foreach ($all2 as $item2) {
-                                            if ($item2[1] == $_SESSION['user']['id']) {
                                             ?>
-                                                <tr>
-                                                    <td><a href="user.php?id=<?= $item[0] ?>"><img class="photo" src="<?= $item[4] ?>" alt="photo"></a></td>
-                                                    <td><?= $item[1] ?></td>
-                                                </tr>
-                                                <?php
-                                            }
+                                            <tr>
+                                                <td><a href="user.php?id=<?= $item2[0] ?>"><img class="photo" src="<?= $item2[4] ?>" alt="photo"></a></td>
+                                                <td><?= $item2[1] ?></td>
+                                            </tr>
+                                            <?php
                                         }
                                     }
                                 ?>
@@ -68,7 +66,7 @@
                 </div>
             </section>
 
-            <h1 class="section_text">Ожидание ответа</h1>
+            <h1 class="section_text">Подписки</h1>
             <section>
                 <div class="table">
                     <?php
@@ -80,22 +78,58 @@
                                     require "lib/db.php";
                                     $user_id = $_SESSION['user']['id'];
 
-                                    $quaryAll = "SELECT * FROM `friend` WHERE `friend`.`user_id`='$user_id'";
+                                    $quaryAll = "SELECT * FROM `friend` WHERE `friend`.`user_id`='$user_id' AND `status`='0'";
                                     $all = mysqli_query($db,$quaryAll);
                                     $all = mysqli_fetch_all($all);
                                     foreach ($all as $item){
-                                        $quaryAll2 = "SELECT * FROM `friend` WHERE `friend`.`user_id`='$item[2]'";
+                                        $quaryAll2 = "SELECT * FROM `user` WHERE `user`.`id`='$item[2]'";
                                         $all2 = mysqli_query($db,$quaryAll2);
                                         $all2 = mysqli_fetch_all($all2);
-                                        foreach ($all2 as $item2){
-                                            if ($item2[1] != $_SESSION['user']['id']) {
-                                                ?>
-                                                <tr>
-                                                    <td><a href="user.php?id=<?=$item[0]?>"><img class="photo" src="<?=$item[4]?>" alt="photo"></a></td>
-                                                    <td><?=$item[1]?></td>
-                                                </tr>
-                                                <?php
-                                            }
+                                        foreach ($all2 as $item2) {
+                                            ?>
+                                            <tr>
+                                                <td><a href="user.php?id=<?= $item2[0] ?>"><img class="photo" src="<?= $item2[4] ?>" alt="photo"></a></td>
+                                                <td><?= $item2[1] ?></td>
+                                            </tr>
+                                            <?php
+                                        }
+                                    }
+                                ?>
+                            </table>
+
+                            <?php
+                        }
+                        
+                    ?>
+                </div>
+            </section>
+
+            <h1 class="section_text">Подписки</h1>
+            <section>
+                <div class="table">
+                    <?php
+                        if (isset($_SESSION['user'])) {
+                            ?>
+                            <table>
+                                
+                                <?php
+                                    require "lib/db.php";
+                                    $user_id = $_SESSION['user']['id'];
+
+                                    $quaryAll = "SELECT * FROM `friend` WHERE `friend`.`friend_id`='$user_id' AND `status`='0'";
+                                    $all = mysqli_query($db,$quaryAll);
+                                    $all = mysqli_fetch_all($all);
+                                    foreach ($all as $item){
+                                        $quaryAll2 = "SELECT * FROM `user` WHERE `user`.`id`='$item[1]'";
+                                        $all2 = mysqli_query($db,$quaryAll2);
+                                        $all2 = mysqli_fetch_all($all2);
+                                        foreach ($all2 as $item2) {
+                                            ?>
+                                            <tr>
+                                                <td><a href="user.php?id=<?= $item2[0] ?>"><img class="photo" src="<?= $item2[4] ?>" alt="photo"></a></td>
+                                                <td><?= $item2[1] ?></td>
+                                            </tr>
+                                            <?php
                                         }
                                     }
                                 ?>
