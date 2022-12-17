@@ -18,21 +18,23 @@
     ?>
     <main>
         <aside>
-            <a href="people.php">
-                <span class="icon"><ion-icon name="people-outline"></ion-icon></span><br>
-                <span class="text">Люди</span>
-            </a>
-            <a href="friend.php">
-                <span class="icon"><ion-icon name="people-circle-outline"></ion-icon></span><br>
-                <span class="text">Друзья</span>
-            </a>
+            <div class="link">
+                <a href="people.php">
+                    <span class="icon"><ion-icon name="people-outline"></ion-icon></span><br>
+                    <span class="text">Люди</span>
+                </a>
+            <div>
+            <div class="link">
+                <a href="friend.php">
+                    <span class="icon"><ion-icon name="people-circle-outline"></ion-icon></span><br>
+                    <span class="text">Друзья</span>
+                </a>
+            <div>
         </aside>
         <section>
-            <div class="table">
                 <?php
                     if (isset($_SESSION['user'])) {
                         ?>
-                        <table>
                             
                             <?php
                                 require "lib/db.php";
@@ -41,20 +43,18 @@
                                 $all = mysqli_fetch_all($all);
                                 foreach ($all as $item){        
                             ?>
-                                <tr>
-                                    <td><a href="user.php?id=<?=$item[0]?>"><img class="photo" src="<?=$item[4]?>" alt="photo"></a></td>
-                                    <td><?=$item[1]?></td>
-                                </tr>
+                                <div class="user">
+                                    <div><a href="user.php?id=<?=$item[0]?>"><img class="photo" src="<?=$item[4]?>" alt="photo"></a></div>
+                                    <div class="nick"><p><?=$item[1]?></p></div>
+                                </div>
                             <?php
                                 }
                             ?>
-                        </table>
 
                         <?php
                     }
                     
                 ?>
-            </div>
         </section>
     </main>
 </body>

@@ -14,9 +14,20 @@ aside {
     padding: 5px;
 }
 
+.link {
+    margin-top: 10px;
+}
 
+.sections {
+    width: 100%;
+    margin-right: 40px;
+}
 
-section {
+.section_text {
+    margin: 10px 20px;
+}
+
+.section1{
     display: flex;
     background-color: #e3e3e3;
     border-radius: 25px 25px 25px 25px;
@@ -66,6 +77,11 @@ section {
     color: #6ef85b;
 }
 
+.add_friends {
+    color: #96d87c;
+    font-size: 25px;
+}
+
 .add_friends a {
     color: #96d87c;
     font-size: 20px;
@@ -73,4 +89,76 @@ section {
 
 .add_friends a:hover {
     color: #6ef85b;
+}
+
+.section2{
+    background-color: #e3e3e3;
+    border-radius: 25px 25px 25px 25px;
+    margin: 5px 20px;
+    width: 100%;
+    min-height: 280px;
+    padding: 10px;
+}
+
+.comments_avatar {
+    max-width: 50px;
+    max-height: 50px;
+    border-radius: 100%;
+    margin-right: 15px;
+}
+
+.comments {
+    display: flex;
+    background-color: #d3d3d3;
+    margin: 15px;
+    padding: 10px;
+    border-radius: 25px;
+}
+
+.commentss {
+    align-items: center;
+    display: flex;
+}
+
+.textarea_div {
+    align-items: center;
+    display: flex;
+}
+
+.textarea {
+    background-color: #ececec;
+    color: #535353;
+    padding: 1em;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    outline: none;
+    overflow: auto;
+    resize: none;
+    width: 500px;
+}
+
+input[type = "submit"] {
+    padding: 10px;
+    background: #e3e3e3;
+    border: unset;
+    border-radius: 15px;
+    cursor: pointer;
+    width: 90px;
+    text-align: center;
+    display: flex;
+}
+
+.del {
+    margin-left: auto; 
+    margin-right: 0;
+
+}
+
+.del a {
+    color: #e65d5d;
+    cursor: pointer;
+}
+
+.del a:hover {
+    color: #f81d1d;
 }
