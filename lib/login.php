@@ -15,7 +15,8 @@
             "id" => $user['id'],
             "email" => $user['email'],
             "role" => $user['role'],
-            "avatar" => $user['avatar']
+            "avatar" => $user['avatar'],
+            "color" => $user['color']
         ];
 
         $userid = $user["id"];

@@ -115,9 +115,36 @@ aside {
     border-radius: 25px;
 }
 
+.admin_comment {
+    color: #398edd;
+}
+
+.buy_vip {
+    color: #e6d226;
+    font-size: 20px;
+}
+
+.buy_vip:hover {
+    color: #eeda25;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.change_color {
+    font-size: 20px;
+    color: #5e1774;
+}
+
+.change_color:hover {
+    color: #2f053b;
+    font-size: 20px;
+    cursor: pointer;
+}
+
 .commentss {
     align-items: center;
     display: flex;
+    margin-top: 5px;
 }
 
 .textarea_div {

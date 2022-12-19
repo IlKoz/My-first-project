@@ -46,4 +46,7 @@ section {
     display: flex;
 }
 
+.admin_comment {
+    color: #398edd;
+}
 

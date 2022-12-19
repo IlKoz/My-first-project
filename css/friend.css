@@ -64,3 +64,7 @@ section {
 .text_section {
     padding: 10px;
 }
+
+.admin_comment {
+    color: #398edd;
+}

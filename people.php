@@ -45,7 +45,7 @@
                             ?>
                                 <div class="user">
                                     <div><a href="user.php?id=<?=$item[0]?>"><img class="photo" src="<?=$item[4]?>" alt="photo"></a></div>
-                                    <div class="nick"><p><?=$item[1]?></p></div>
+                                    <div class="nick"><p style="color: <?=$item[5]?>;"><?=$item[1]?></p></div>
                                 </div>
                             <?php
                                 }

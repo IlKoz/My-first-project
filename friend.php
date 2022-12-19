@@ -59,7 +59,7 @@
                                                     ?>
                                                     <div class="user">
                                                         <div><a href="user.php?id=<?= $item2[0] ?>"><img class="photo" src="<?= $item2[4] ?>" alt="photo"></a></div>
-                                                        <div class="nick"><p><?= $item2[1] ?></p></div>
+                                                        <div class="nick" style="color: <?=$item2[5]?>;"><p><?=$item2[1]?></p></div>
                                                     </div>
                                                     <?php
                                                 }
@@ -71,7 +71,7 @@
                                                     ?>
                                                     <div class="user">
                                                         <div><a href="user.php?id=<?= $item2[0] ?>"><img class="photo" src="<?= $item2[4] ?>" alt="photo"></a></div>
-                                                        <div class="nick"><p><?= $item2[1] ?></p></div>
+                                                        <div class="nick" style="color: <?=$item2[5]?>;"><p><?=$item2[1]?></p></div>
                                                     </div>
                                                     <?php
                                                 }
@@ -112,7 +112,7 @@
                                             ?>
                                             <div class="user">
                                                 <div><a href="user.php?id=<?= $item2[0] ?>"><img class="photo" src="<?= $item2[4] ?>" alt="photo"></a></div>
-                                                <div class="nick"><p><?= $item2[1] ?></p></dib>
+                                                <div class="nick" style="color: <?=$item2[5]?>;"><p><?=$item2[1]?></p></div>
                                             </div>
                                             <?php
                                         }    
@@ -153,7 +153,7 @@
                                             ?>
                                             <div class="user">
                                                 <div><a href="user.php?id=<?= $item2[0] ?>"><img class="photo" src="<?= $item2[4] ?>" alt="photo"></a></div>
-                                                <div class="nick"><p><?= $item2[1] ?></p></div>
+                                                <div class="nick" style="color: <?=$item2[5]?>;"><p><?=$item2[1]?></p></div>
                                             </div>
                                             <?php
                                         }

@@ -18,7 +18,7 @@
     $allUsers=mysqli_fetch_assoc($allUsers);
 
     if(!$allUsers){
-        $querryAddUsers = "INSERT INTO `user`(`id`,`email`,`pass`,`role`,`avatar`) VALUES(NULL,'$email','$pass','user','img/profile.png')";
+        $querryAddUsers = "INSERT INTO `user`(`id`,`email`,`pass`,`role`,`avatar`,`color`) VALUES(NULL,'$email','$pass','user','img/profile.png','#000000')";
         $addUser=mysqli_query($db,$querryAddUsers);
         $_SESSION['message2'] = "Вы успешно зарегистрировались :)";
         header("Location:../auth.php");

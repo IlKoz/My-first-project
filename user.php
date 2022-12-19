@@ -54,7 +54,7 @@
                                 <div class="content_item">
                                     <img class="avatar" src="<?=$_SESSION['user']['avatar']?>" alt="avatar">
                                     <h1 class="change_avatar"><a href="file_avatar.php">Сменить аватарку</a></h1>
-                                    <h1 class="name"> <?=$_SESSION['user']['email']?> </h1>
+                                    <h1 class="name" style="color: <?=$_SESSION['user']['color']?>;"> <?=$_SESSION['user']['email']?> </h1>
                                     <h1 class="logout"><a href="lib/logout.php">Выйти</a></h1>
                                 </div>
                             </div>
@@ -62,7 +62,11 @@
                             if ($_SESSION['user']['role'] == 'user') {
                                 ?>
 
-
+                                <div class="content">
+                                    <div class="content_item">
+                                        <h1"><a class="buy_vip" href="buy_vip.php">Купить VIP</a></h1>
+                                    </div>
+                                </div>
 
                                 <?php
                             } else if ($_SESSION['user']['role'] == 'admin') {
@@ -73,6 +77,21 @@
                                         <h1 class="admin_panel"><a href="users.php">Админ-панель(пользователей)</a></h1>
                                     </div>
                                 </div>
+                                <div class="content">
+                                    <div class="content_item">
+                                        <h1"><a class="change_color" href="change_color.php">Сменить цвет ника</a></h1>
+                                    </div>
+                                </div>
+                                <?php
+                            } else if ($_SESSION['user']['role'] == 'vip') {
+                                ?>
+
+                                <div class="content">
+                                    <div class="content_item">
+                                        <h1"><a class="change_color" href="change_color.php">Сменить цвет ника</a></h1>
+                                    </div>
+                                </div>
+
                                 <?php
                             }
                         } else {
@@ -109,7 +128,7 @@
                                         }
 
                                     ?>
-                                    <h1 class="name"> <?=$one["email"]?> </h1>
+                                    <h1 class="name" style="color: <?=$one["color"]?>;"> <?=$one["email"]?> </h1>
                                 </div>
                             </div>
                             <?php
@@ -149,11 +168,16 @@
                                     <div>
                                         <a href="user.php?id=<?=$one["id"]?>"><img class="comments_avatar" src="<?=$one["avatar"]?>" alt="photo"></a>
                                     </div>
-                                    <div class="commentss">
-                                        <p><?= $item[3] ?></p>
+                                    <div>
+                                        <div class="nick_comments">
+                                            <p style="color: <?= $one["color"] ?>;"><?= $one["email"] ?></p>
+                                        </div>
+                                        <div class="commentss">
+                                            <p><?= $item[3] ?></p>
+                                        </div>
                                     </div>
                                     <?php
-                                        if ($item[1] == $user_id) {
+                                        if ($item[1] == $user_id || $item[2] == $user_id) {
                                             ?>
                                             <div class="del">
                                                 <a href="lib/del_comments.php?id=<?=$item[0]?>">Удалить</a>

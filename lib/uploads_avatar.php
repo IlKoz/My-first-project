@@ -5,6 +5,7 @@
     $id = $_SESSION['user']['id'];
     $email = $_SESSION['user']['email'];
     $role = $_SESSION['user']['role'];
+    $color = $_SESSION['user']['color'];
 
     $file = $_FILES["file"];
     $filename = time() . $file["name"];
@@ -21,7 +22,8 @@
             "id" => $id,
             "email" => $email,
             "role" => $role,
-            "avatar" => $path
+            "avatar" => $path,
+            "color" => $color
         ];
         header("Location:../user.php");
     }
